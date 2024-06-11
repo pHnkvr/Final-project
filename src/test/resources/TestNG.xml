@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Final Suite" parallel = "classes">
+    <test name="LoginOnPage">
+        <classes>
+            <class name="tests.LoginAccount"/>
+        </classes>
+    </test>
+    <test name="SearchOnPage">
+        <classes>
+            <class name="tests.SearchPage"/>
+        </classes>
+    </test>
+</suite>
