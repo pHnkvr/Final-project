@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import java.util.Set;
 
@@ -52,9 +53,15 @@ public class WorkWithElements {
         }
         driver.switchTo().window(mainWindowHandle);
     }
-    public void clearInput(By locator){
+
+    public void clearInput(By locator) {
         WebElement element = driver.findElement(locator);
         element.clear();
     }
 
+    public void assertTextResult(By locator, String expectedMessage) {
+        WebElement element = driver.findElement(locator);
+        String actualText = element.getText();
+        Assert.assertEquals(actualText, expectedMessage, "Message is not equals");
+    }
 }

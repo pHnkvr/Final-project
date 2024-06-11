@@ -3,7 +3,6 @@ package tests;
 import driver_init.DriverInit;
 import functions.CustomWaiters;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import pages.LoginAccount;
 import pages.SearchPage;
@@ -17,8 +16,8 @@ public class BasePage {
     public void init(){
         driver = DriverInit.startDriver();
     }
-   @AfterSuite
+  /* @AfterSuite
     public void stop(){
         driver.quit();
-    }
+    }*/
 }
