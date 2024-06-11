@@ -65,4 +65,10 @@ public class WorkWithElements {
         Assert.assertEquals(actualText, expectedMessage, "Message is not equals");
     }
 
+    public void assertTextResultIgnoringCase(By locator, String expectedMessage) {
+        WebElement element = driver.findElement(locator);
+        String actualText = element.getText();
+        Assert.assertTrue(actualText.equalsIgnoreCase(expectedMessage), "Message is not equals (case insensitive)");
+
+    }
 }

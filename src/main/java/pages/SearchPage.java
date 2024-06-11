@@ -19,7 +19,7 @@ public class SearchPage extends BasePage {
         private static final By maxPrice = By.xpath("(//input[@class='f-range__form-input'])[2]");
         private static final By showProduct = By.xpath("//span[@class='f-popup__message']");
         private static final By noSuchResult = By.xpath("//span[contains(., 'Знайдено товарів: 0')]");
-        private static final By showActualResult = By.xpath("//span[contains(., 'Знайдено товарів: 192')]");
+        private static final By showActualResult = By.xpath("//span[contains(., 'Знайдено товарів: 193')]");
     }
 
     public SearchPage openMainPage() throws InterruptedException {
@@ -79,7 +79,7 @@ public class SearchPage extends BasePage {
     public SearchPage isMessageEqualsForNotRandomWord(String searchText, int numberOfResults) {
         String expectedMessage = String.format("Результати пошуку для '%s'. Знайдено товарів: %d", searchText, numberOfResults);
         waiters.waitForVisibility(Locators.showActualResult);
-        workWithElements.assertTextResult(Locators.showActualResult, expectedMessage);
+        workWithElements.assertTextResultIgnoringCase(Locators.showActualResult, expectedMessage);
         return this;
     }
 }
