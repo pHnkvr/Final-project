@@ -11,8 +11,9 @@ public class SearchPage extends BasePage {
 
     private final static class Locators {
         private static final By closeCachbackButton = By.xpath("//button[@class='close']");
-        private static final By closeCachbackImage = By.xpath("//a[@class='img_a']");
+        private static final By closeCashbackImage = By.xpath("//a[@class='img_a']");
         private static final By findPlaceholder = By.id("search-form__input");
+        private static final By showInList = By.xpath("//button[@title='Список']");
         private static final By priceSection= By.xpath("(//section[@class='f-range'])[1]");
         private static final By minPrice = By.xpath("(//input[@class='f-range__form-input'])[1]");
         private static final By maxPrice = By.xpath("(//input[@class='f-range__form-input'])[2]");
@@ -22,9 +23,9 @@ public class SearchPage extends BasePage {
         driver.get(Urls.page);
         return this;
     }
-    public SearchPage closeCachbackButton(){
+    public SearchPage closeCashbackButton(){
         try {
-            waiters.waitForVisibility(Locators.closeCachbackImage);
+            waiters.waitForVisibility(Locators.closeCashbackImage);
             workWithElements.click(Locators.closeCachbackButton);
         }catch (Exception e){}
         return this;

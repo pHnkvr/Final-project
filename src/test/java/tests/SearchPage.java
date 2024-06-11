@@ -6,7 +6,7 @@ public class SearchPage extends BasePage{
     @Test(priority = 1)
     public void openMainPage() throws InterruptedException {
         SearchPage.openMainPage()
-                .closeCachbackButton()
+                .closeCashbackButton()
                 .inputField("EcoFlow River");
 
 

@@ -17,7 +17,6 @@ public class WorkWithElements {
     }
 
     public void click(By locator) {
-
         waiters.waitForVisibility(locator);
         driver.findElement(locator).click();
     }
