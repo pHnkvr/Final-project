@@ -19,6 +19,7 @@ public class SearchPage extends BasePage {
         private static final By maxPrice = By.xpath("(//input[@class='f-range__form-input'])[2]");
         private static final By showProduct = By.xpath("//span[@class='f-popup__message']");
         private static final By noSuchResult = By.xpath("//span[contains(., 'Знайдено товарів: 0')]");
+        private static final By showActualResult = By.xpath("//span[contains(., 'Знайдено товарів: 192')]");
     }
 
     public SearchPage openMainPage() throws InterruptedException {
@@ -62,17 +63,23 @@ public class SearchPage extends BasePage {
         return this;
     }
 
-    public SearchPage inputWrongCatalogSearch(String searchText) {
+    public SearchPage inputCatalogSearch(String searchText) {
         workWithElements.inputText(Locators.findPlaceholder, searchText);
         workWithElements.pressEnter(Locators.findPlaceholder);
         return this;
     }
 
-    public SearchPage isMessageEquals(String searchText, int numberOfResults) {
+    public SearchPage isMessageEqualsForRandomWord(String searchText, int numberOfResults) {
         String expectedMessage = String.format("Результати пошуку для '%s'. Знайдено товарів: %d", searchText, numberOfResults);
         waiters.waitForVisibility(Locators.noSuchResult);
         workWithElements.assertTextResult(Locators.noSuchResult, expectedMessage);
         return this;
+    }
 
+    public SearchPage isMessageEqualsForNotRandomWord(String searchText, int numberOfResults) {
+        String expectedMessage = String.format("Результати пошуку для '%s'. Знайдено товарів: %d", searchText, numberOfResults);
+        waiters.waitForVisibility(Locators.showActualResult);
+        workWithElements.assertTextResult(Locators.showActualResult, expectedMessage);
+        return this;
     }
 }

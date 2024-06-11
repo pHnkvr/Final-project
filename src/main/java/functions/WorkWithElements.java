@@ -64,4 +64,5 @@ public class WorkWithElements {
         String actualText = element.getText();
         Assert.assertEquals(actualText, expectedMessage, "Message is not equals");
     }
+
 }

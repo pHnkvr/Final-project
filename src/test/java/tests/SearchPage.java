@@ -20,13 +20,16 @@ public class SearchPage extends BasePage{
     }
     @Test(priority = 4)
     public void findWrongRequest()throws InterruptedException{
-        SearchPage.inputWrongCatalogSearch("инфляция")
-                .isMessageEquals("инфляция", 0);
+        SearchPage.inputCatalogSearch("инфляция")
+                .isMessageEqualsForRandomWord("инфл@ция", 0);
     }
     @Test(priority = 5)
     public void findRequestWithSpecialSymbol()throws InterruptedException{
-        SearchPage.inputWrongCatalogSearch("Ec)Fl)w r!v3r")
-                .isMessageEquals("Ec)Fl)w r!v3r", 192);
-
+        SearchPage.inputCatalogSearch("Ec)Fl)w r!v3r");
+    }
+    @Test(priority = 6)
+    public void findExpectedRequest()throws InterruptedException{
+        SearchPage.inputCatalogSearch("EcoFlow River")
+                .isMessageEqualsForNotRandomWord("ecoflow river", 193);
     }
 }
