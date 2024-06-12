@@ -16,6 +16,17 @@ public class Ordering extends BasePage {
     }
     @Test(priority = 3)
     public void chooseSort()throws InterruptedException{
-    Ordering.changeSort();
+        Ordering.changeSort("від дешевих до дорогих");
+
+    }
+    @Test(priority = 4)
+    public void addToCart()throws InterruptedException{
+        Ordering.addingToCart()
+                .cart();
+
+    }
+    @Test(priority = 5)
+    public void order()throws InterruptedException{
+        Ordering.creatingOrder();
     }
 }

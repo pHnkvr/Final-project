@@ -3,8 +3,8 @@ package functions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+
 import java.time.Duration;
-import java.util.function.Function;
 
 public class CustomWaiters {
     private final WebDriver driver;
@@ -24,16 +24,21 @@ public class CustomWaiters {
                 .ignoring(NoSuchFrameException.class);
     }
 
-    private void waitForFunction(Function function) {
-        FluentWait<WebDriver> wait = fluentWait();
-        wait.until(function);
-    }
-
     public WebElement waitForVisibility(By locator){
         return fluentWait().until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    public WebElement waitForVisibility(WebElement element){
+    public WebElement clickableStateOfElement(By locator){
+        return fluentWait().until(ExpectedConditions.elementToBeClickable(locator));
+    }
+   /* Optional waiters
+
+   private void waitForFunction(Function function) {
+        FluentWait<WebDriver> wait = fluentWait();
+        wait.until(function);
+    }
+
+   public WebElement waitForVisibility(WebElement element){
         return fluentWait().until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -44,9 +49,8 @@ public class CustomWaiters {
     public Alert switchToAlert(){
         return fluentWait().until(ExpectedConditions.alertIsPresent());
     }
-
-    public WebElement clickableStateOfElement(By locator){
-        return fluentWait().until(ExpectedConditions.elementToBeClickable(locator));
+    public void waitForAttributeToContain(By locator, String attribute, String value) {
+        waitForFunction(ExpectedConditions.attributeContains(locator, attribute, value));
     }
 
     public void waitForElementSelection(By locator){
@@ -55,5 +59,5 @@ public class CustomWaiters {
 
     public void waitForElementDeSelection(By locator){
         waitForFunction(ExpectedConditions.elementSelectionStateToBe(locator, false));
-    }
+    }*/
 }

@@ -30,6 +30,6 @@ public class SearchPage extends BasePage{
     @Test(priority = 6)
     public void findExpectedRequest()throws InterruptedException{
         SearchPage.inputCatalogSearch("EcoFlow River")
-                .isMessageEqualsForNotRandomWord("ecoflow river", 193);
+                .isMessageEqualsForNotRandomWord("ecoflow river", 193); // тест зависит от того, сколько в локаторе showActualResult найдено результатов
     }
 }

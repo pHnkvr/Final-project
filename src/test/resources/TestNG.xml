@@ -10,4 +10,9 @@
             <class name="tests.SearchPage"/>
         </classes>
     </test>
+    <test name="Ordering">
+        <classes>
+            <class name="tests.Ordering"/>
+        </classes>
+    </test>
 </suite>

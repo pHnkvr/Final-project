@@ -43,6 +43,7 @@ public class SearchPage extends BasePage {
     }
 
     public SearchPage ShowInList() {
+        waiters.clickableStateOfElement(Locators.showInList);
         workWithElements.click(Locators.showInList);
         return this;
     }

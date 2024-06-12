@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 import java.util.Set;
@@ -71,6 +72,19 @@ public class WorkWithElements {
         String actualText = element.getText();
         Assert.assertTrue(actualText.equalsIgnoreCase(expectedMessage), "Message is not equals (case insensitive)");
 
+    }
+    public void hoverOverSort(By locator) {
+        WebElement sortElement = waiters.waitForVisibility(locator);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(sortElement).perform();
+    }
+    public By buildSortOptionLocator(String sortOption) {
+        return By.xpath("//ul[@class='sort-by__list']//li[@title='" + sortOption + "']");
+    }
+    public void clickMultipleTimes(By locator, int times) {
+        for (int i = 0; i < times; i++) {
+            click(locator);
+        }
     }
 
 }
