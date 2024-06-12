@@ -17,6 +17,7 @@ public class WorkWithElements {
         this.waiters = waiters;
     }
 
+
     public void click(By locator) {
         waiters.waitForVisibility(locator);
         driver.findElement(locator).click();
@@ -71,4 +72,5 @@ public class WorkWithElements {
         Assert.assertTrue(actualText.equalsIgnoreCase(expectedMessage), "Message is not equals (case insensitive)");
 
     }
+
 }
