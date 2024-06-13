@@ -31,6 +31,8 @@ public class CustomWaiters {
     public WebElement clickableStateOfElement(By locator){
         return fluentWait().until(ExpectedConditions.elementToBeClickable(locator));
     }
+
+
    /* Optional waiters
 
    private void waitForFunction(Function function) {

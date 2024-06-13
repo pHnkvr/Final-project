@@ -14,6 +14,9 @@ public class Ordering extends BasePage{
         private static final By plusButton = By.xpath("(//*[local-name()='svg' and contains(@class, 'qty__up')])");
         private static final By showInList = By.xpath("//button[@title='Список']");
         private static final By createAnOrder = By.xpath("//button[@class='order-now']");
+        private static final By editOrder = By.id("mini-cart-edit");
+        private static final By cancelOrder = By.xpath("//*[name()='svg' and contains(@class, 'vi') and contains(@class, 'i-shared') and contains(@class, 'vi__close') and contains(@class, 'remove')]");
+        private static final By backToMainPage = By.xpath("//a[@href='https://allo.ua/ua/']");
 
     }
 
@@ -41,6 +44,17 @@ public class Ordering extends BasePage{
   public Ordering creatingOrder(){
         waiters.clickableStateOfElement(Locators.plusButton);
         workWithElements.click(Locators.createAnOrder);
+        return this;
+  }
+  public Ordering cancelOrdering() throws InterruptedException {
+        waiters.waitForVisibility(Locators.editOrder);
+        workWithElements.click(Locators.editOrder);
+        waiters.waitForVisibility(Locators.cartPopUp);
+        waiters.waitForVisibility(Locators.cancelOrder);
+        waiters.clickableStateOfElement(Locators.cancelOrder);
+        workWithElements.click(Locators.cancelOrder);
+        waiters.waitForVisibility(Locators.backToMainPage);
+        workWithElements.click(Locators.backToMainPage);
         return this;
   }
 }
