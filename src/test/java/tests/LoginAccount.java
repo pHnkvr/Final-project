@@ -12,12 +12,12 @@ public class LoginAccount extends BasePage {
                 .closeCachbackButton();
     }
 
-    @Test(priority = 2, dependsOnMethods = "openMainPage_C4")
+    @Test(priority = 2)
     public void clickLoginIconOnMainPage_C5() throws InterruptedException {
         LoginAccount.clickLoginIcon();
     }
 
-    @Test(priority = 3, dependsOnMethods = "clickLoginIconOnMainPage_C5")
+    @Test(priority = 3)
     public void enterOnMainPopUpAuthByPhone_C6() throws InterruptedException {
         LoginAccount.inputPhoneNumber("638268797")
                 .returnToLogin()
@@ -31,7 +31,7 @@ public class LoginAccount extends BasePage {
                 .errorResult();
     }
 
-    @Test(priority = 4, dependsOnMethods = "enterOnMainPopUpAuthByPhone_C6")
+    @Test(priority = 4)
     public void enterByLoginAndPass_C7() throws InterruptedException {
         LoginAccount.enterByLoginAndPassword()
                 .emailPlaceholder("a@mail.com")
@@ -53,7 +53,7 @@ public class LoginAccount extends BasePage {
                 .returnToLogin();
     }
 
-    @Test(priority = 5, dependsOnMethods = "enterByLoginAndPass_C7")
+    @Test(priority = 5)
     public void enterByPhoneAndPass_C8() throws InterruptedException {
         LoginAccount.enterByLoginAndPassword()
                 .phonePlaceholder("+380638268794") //random number, not mine
@@ -71,13 +71,13 @@ public class LoginAccount extends BasePage {
                 .returnToLogin();
     }
 
-    @Test(priority = 6, dependsOnMethods = "enterByPhoneAndPass_C8")
+    @Test(priority = 6)
     public void enterByGoogleAuth_C9() {
         LoginAccount.googleAuthorization()
                 .closeAuthorization();
     }
 
-    @Test(priority = 7, dependsOnMethods = "enterByGoogleAuth_C9")
+    @Test(priority = 7 )
     public void enterByFacebookAuth_C10() {
         LoginAccount.facebookAuthorization()
                 .closeAuthorization();

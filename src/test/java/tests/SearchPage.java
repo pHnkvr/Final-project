@@ -3,9 +3,11 @@ package tests;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.testng.AllureTestNg;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-
+@Listeners(AllureTestNg.class)
 public class SearchPage extends BasePage{
 
     @Test(priority = 1)
