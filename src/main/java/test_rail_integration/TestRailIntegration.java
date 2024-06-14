@@ -35,6 +35,7 @@ public class TestRailIntegration implements ITestListener {
 
         String time = String.format("%1$tH:%1$tM", new Date());
         run = testRailClient.runs().add(1, new Run().setName("Idea Run " + time)).execute();
+        resultFieldList = testRailClient.resultFields().list().execute();
     }
 
 

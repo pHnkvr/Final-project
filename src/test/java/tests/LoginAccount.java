@@ -4,7 +4,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import test_rail_integration.TestRailIntegration;
 
-@Listeners(TestRailIntegration.class)
+
 public class LoginAccount extends BasePage {
 
     @Test(priority = 1)

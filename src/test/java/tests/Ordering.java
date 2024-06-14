@@ -4,7 +4,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import test_rail_integration.TestRailIntegration;
 
-@Listeners({TestRailIntegration.class})
+
 public class Ordering extends BasePage {
     @Test(priority = 1)
     public void openMainPage_C15() throws InterruptedException {
