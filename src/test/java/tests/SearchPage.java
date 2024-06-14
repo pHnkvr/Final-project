@@ -1,9 +1,13 @@
 package tests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.Test;
 
 
 public class SearchPage extends BasePage{
+
     @Test(priority = 1)
     public void openMainPage_C17() throws InterruptedException {
         SearchPage.openMainPage()
@@ -20,6 +24,8 @@ public class SearchPage extends BasePage{
                 .showProductPopupMessage();
     }
     @Test(priority = 4)
+    @Description("This is check if words are equals")
+    @Severity(SeverityLevel.MINOR)
     public void findWrongRequest_C20()throws InterruptedException{
         SearchPage.inputCatalogSearch("инфляция")
                 .isMessageEqualsForRandomWord("инфл@ция", 0);
