@@ -31,35 +31,4 @@ public class CustomWaiters {
     public WebElement clickableStateOfElement(By locator){
         return fluentWait().until(ExpectedConditions.elementToBeClickable(locator));
     }
-
-
-   /* Optional waiters
-
-   private void waitForFunction(Function function) {
-        FluentWait<WebDriver> wait = fluentWait();
-        wait.until(function);
-    }
-
-   public WebElement waitForVisibility(WebElement element){
-        return fluentWait().until(ExpectedConditions.visibilityOf(element));
-    }
-
-    public void switchToFrame(By locator){
-        waitForFunction(ExpectedConditions.frameToBeAvailableAndSwitchToIt(locator));
-    }
-
-    public Alert switchToAlert(){
-        return fluentWait().until(ExpectedConditions.alertIsPresent());
-    }
-    public void waitForAttributeToContain(By locator, String attribute, String value) {
-        waitForFunction(ExpectedConditions.attributeContains(locator, attribute, value));
-    }
-
-    public void waitForElementSelection(By locator){
-        waitForFunction(ExpectedConditions.elementToBeSelected(locator));
-    }
-
-    public void waitForElementDeSelection(By locator){
-        waitForFunction(ExpectedConditions.elementSelectionStateToBe(locator, false));
-    }*/
 }

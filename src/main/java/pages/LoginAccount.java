@@ -30,13 +30,6 @@ public class LoginAccount extends BasePage{
             return this;
         }
     }
-    public LoginAccount closeCachbackButton(){
-        try {
-            waiters.waitForVisibility(LoginAccount.Locators.closeCachbackImage);
-            workWithElements.click(LoginAccount.Locators.closeCachbackButton);
-        }catch (Exception e){}
-        return this;
-    }
     public LoginAccount clickLoginIcon(){
         workWithElements.click(Locators.loginProfile);
         return this;

@@ -8,8 +8,8 @@ public class LoginAccount extends BasePage {
 
     @Test(priority = 1)
     public void openMainPage_C4() throws InterruptedException {
-        LoginAccount.openMainPage()
-                .closeCachbackButton();
+        SearchPage.openMainPage()
+                .closeCashbackButton();
     }
 
     @Test(priority = 2)
