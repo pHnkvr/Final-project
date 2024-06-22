@@ -56,7 +56,7 @@ public class LoginAccount extends BasePage {
     @Test(priority = 5)
     public void enterByPhoneAndPass_C8() throws InterruptedException {
         LoginAccount.enterByLoginAndPassword()
-                .phonePlaceholder("+380638268794") //random number, not mine
+                .phonePlaceholder("+380638268794")
                 .passwordPlaceholder("qwerty12345")
                 .returnToLogin()
                 .enterByLoginAndPassword()
