@@ -23,12 +23,7 @@ public class LoginAccount extends BasePage{
         private static final By googleAuth = By.xpath("//span[contains(text(), 'Google')]");
         private static final By facebookAuth = By.xpath("//span[contains(text(), 'Facebook')]");
     }
-    public LoginAccount openMainPage() throws InterruptedException{
-       {
-            driver.get(Urls.page);
-            return this;
-        }
-    }
+
     public LoginAccount clickLoginIcon(){
         workWithElements.click(Locators.loginProfile);
         return this;
