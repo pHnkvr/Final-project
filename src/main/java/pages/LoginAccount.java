@@ -10,8 +10,7 @@ public class LoginAccount extends BasePage{
         super(driver);
     }
     private final static class Locators {
-        private static final By closeCachbackButton = By.xpath("//button[@class='close']");
-        private static final By closeCachbackImage = By.xpath("//a[@class='img_a']");
+
         private static final By loginProfile = By.xpath("//button[@aria-label='Профіль']");
         private static final By authPopUp = By.xpath("//div[@class='auth']");
         private static final By phonePlaceholder = By.name("telephone");
